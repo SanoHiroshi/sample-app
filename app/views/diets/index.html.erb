@@ -1,0 +1,9 @@
+<% provide(:title, 'Helthcare.Graph') %>
+<h1>Helthcare.Graph</h1>
+
+  <!-- <% @diets.each do |t| %> -->
+    <!-- <li><%= t.created_at %> <%= t.weight %>kg <%= t.height %>cm<%= t.user_id%></li> -->
+    <!-- <% @graph = t.created_at, t.weight %>
+  <% end %> -->
+
+    <%= line_chart @graph %>

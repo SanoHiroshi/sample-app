@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160706043633) do
+ActiveRecord::Schema.define(version: 20160726061509) do
+
+  create_table "diets", force: :cascade do |t|
+    t.float    "weight"
+    t.float    "height"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "diets", ["user_id", "created_at"], name: "index_diets_on_user_id_and_created_at"
+  add_index "diets", ["user_id"], name: "index_diets_on_user_id"
+
+  create_table "likes", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "micropost_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "microposts", force: :cascade do |t|
     t.text     "content"

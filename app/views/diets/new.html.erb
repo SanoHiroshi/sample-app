@@ -1,0 +1,19 @@
+<% provide(:title, 'Helthcare') %>
+<h1>Helthcare</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@diet) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <%= f.label :weight %>
+      <%= f.number_field :weight, class: 'form-control' %>
+
+      <%= f.label :height %>
+      <%= f.number_field :height, class: 'form-control' %>
+
+      <% users/:id %>
+
+      <%= f.submit "送信", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,5 +1,12 @@
 <% @user ||= current_user %>
 <div class="stats">
+  <a href="#">
+  <strong>
+    <%= @all_tweetcount %>
+  </strong>
+  microposts
+  
+  </a>
   <a href="<%= following_user_path(@user) %>">
     <strong id="following" class="stat">
       <%= @user.following.count %>
