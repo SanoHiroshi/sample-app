@@ -14,8 +14,8 @@
                         Health Care <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-            <li><%= link_to "入力",  new_user_diet_path %></li>
-            <li><%= link_to "グラフ", diets_path %></li>
+            <li><%= link_to "入力",  new_user_diet_path(current_user) %></li>
+            <li><%= link_to "グラフ", user_diets_path(current_user) %></li>
           </ul>
           </li>
           <li class="dropdown">

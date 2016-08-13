@@ -2,12 +2,6 @@ class DietsController < ApplicationController
 
   def index
     @diets = Diet.all
-    # @diets = Diet.where(user_id: current_user.id)
-    #   p @diets
-    @diets.each do |t|
-      # p @diets
-      @graph = t.created_at, t.weight
-    end
   end
 
   def new
@@ -16,14 +10,12 @@ class DietsController < ApplicationController
 
   def create
     # URLを動的にしてparams[:id]で取れるようにする
-    user = User.find(params[:id])
-
     @diet = Diet.new(diets_params)
-    # @diet.user_id = user.id
+    @diet.user_id = params[:user_id]
 
     # @diet.user_id = current_user.id
     if @diet.save
-      redirect_to diets_path
+      redirect_to user_diets_path
     else
       render 'new'
     end
